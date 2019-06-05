@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 
 target_scraper = {
     'cf': cf_scraper,
-    'uva': None,
 }
 
 targets = [key for key in target_scraper.keys()]
