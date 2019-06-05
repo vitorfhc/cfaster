@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    cfaster:
+        build: .
+        image: cfaster
+        container_name: cfaster
+        volumes:
+            - .:/cfaster
+        entrypoint: [""]
+        command: ["sleep", "infinity"]
