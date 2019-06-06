@@ -1,7 +1,7 @@
 import logging
 from click import Choice, group, command, option, argument
 
-from scrapers.codeforces import codeforces_scraper as cf_scraper
+from .scrapers.codeforces import codeforces_scraper as cf_scraper
 
 logger = logging.getLogger(__name__)
 
