@@ -6,6 +6,9 @@ with open("README.md", "r") as fh:
 with open('requirements.txt', 'r') as r:
     requirements = r.readlines()
 
+with open('VERSION.txt', 'r') as v:
+    version = v.read().strip()
+
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -21,7 +24,7 @@ entry_points = {
 
 setuptools.setup(
     name="cfaster",
-    version="0.0.1",
+    version=version,
     author="Vitor Falcão Costa",
     author_email="vitorfhcosta@gmail.com",
     description="A package to get all you need to start a\

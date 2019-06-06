@@ -1,5 +1,5 @@
 import logging
-from click import Choice, group, command, option, argument
+from click import Choice, group, command, option, argument, version_option
 
 from .scrapers.codeforces import codeforces_scraper as cf_scraper
 
@@ -11,10 +11,15 @@ target_scraper = {
 
 targets = [key for key in target_scraper.keys()]
 
+def get_version():
+    with open('VERSION.txt', 'r') as v:
+        version = v.read().strip()
+    return version
 
 @group()
 @option('-v', '--verbose', is_flag=True, help='Output INFO level logs.')
 @option('-d', '--debug', is_flag=True, help='Output DEBUG level logs.')
+@version_option(get_version(), message='v%(version)s')
 def main_cmd(verbose, debug):
     level = logging.WARNING
     format_ = '[%(levelname)s]: %(message)s'
