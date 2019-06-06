@@ -113,7 +113,7 @@ For now we don't have a deployment pipeline, but in the future it will be automa
 
 ## Contributing
 
-We will be providing a CONTRIBUTING.md soon enough.
+If you want to contribute to the project please read [CONTRIBUTING](CONTRIBUTING.md)
 
 ## Versioning
 
