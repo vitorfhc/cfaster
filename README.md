@@ -43,7 +43,8 @@ These instructions will get you a copy of the project up and running on your loc
 For the default isolated development environment used by the maintainers you will need:
 
 - [Docker](https://docs.docker.com/install/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)(optional)
+- [Make](https://opensource.com/article/18/8/what-how-makefile)(optional)
 
 If you prefer not using Docker feel free to use any other you prefer, but the CI integration will be running with Docker images so this is the best way to replicate the production environment.
 
@@ -58,14 +59,13 @@ docker build -t cfaster .
 docker run -it --rm -v $(pwd):/cfaster cfaster bash
 ```
 
-Or you can install and use [docker-compose](https://docs.docker.com/compose/install/) using the commands
+or you can use Make and docker-compose to easily get everything running
 
 ```bash
-chmod +x dev.sh
-./dev.sh
+make dev 
 ```
 
-The script `dev.sh` will run a `docker-compose up` and exec the `bash` command inside it so you can use it.
+Reading the Makefile shows what each target does.
 
 ### Using
 

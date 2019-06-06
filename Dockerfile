@@ -2,8 +2,11 @@ FROM python:3-stretch
 
 WORKDIR /cfaster
 
-COPY requirements.dev.txt /cfaster
-RUN pip install -r requirements.dev.txt
+RUN apt update
+RUN apt -y install make
+
+COPY dev-requirements.txt /cfaster
+RUN pip install -r dev-requirements.txt
 
 COPY . /cfaster
 
