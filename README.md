@@ -67,6 +67,21 @@ chmod +x dev.sh
 
 The script `dev.sh` will run a `docker-compose up` and exec the `bash` command inside it so you can use it.
 
+### Using
+
+You will have two options on how to execute from source code
+
+```bash
+python -m cfaster
+```
+
+or
+
+```bash
+python setup.py install
+cfaster
+```
+
 ## Running the tests
 
 ### Automated tests
