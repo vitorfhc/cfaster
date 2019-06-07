@@ -12,10 +12,12 @@ target_scraper = {
 targets = [key for key in target_scraper.keys()]
 
 
-def get_version():
-    with open('VERSION.txt', 'r') as v:
-        version = v.read().strip()
-    return version
+# FIXME: this doesnt work after making the package
+# because VERSION.txt is not being packed
+# def get_version():
+#     with open('VERSION.txt', 'r') as v:
+#         version = v.read().strip()
+#     return version
 
 
 def set_log_levels(level=logging.WARNING):
@@ -27,7 +29,7 @@ def set_log_levels(level=logging.WARNING):
 
 @group()
 @option('-v', '--verbose', is_flag=True, help='Output INFO level logs.')
-@version_option(get_version(), message='v%(version)s')
+@version_option('0.0.2', message='v%(version)s')
 def main_cmd(verbose):
     if verbose:
         set_log_levels(logging.INFO)
