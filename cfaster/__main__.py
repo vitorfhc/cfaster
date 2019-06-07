@@ -36,14 +36,14 @@ def main_cmd(verbose):
 
 
 @main_cmd.command(
-    short_help='Scraps the problem and saves inputs and outputs.'
+    short_help='Scrapes the problem and saves inputs and outputs.'
 )
 @argument('url')
 @option('-t', '--target', default=targets[0],
         show_default=True, type=Choice(targets),
-        help='Website you are targeting to scrap.')
-def scrap(url, target):
-    logger.info('Running scrap command')
+        help='Website you are targeting to scrape.')
+def scrape(url, target):
+    logger.info('Running scrape command')
     target_scraper[target](url)
 
 

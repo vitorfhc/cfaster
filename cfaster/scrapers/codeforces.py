@@ -14,11 +14,11 @@ def codeforces_scraper(url, **kwargs):
         logger.error('URL passed is not a valid codeforces url')
         exit(1)
     # TODO: documentation of the kwargs
-    inputs, outputs = _scrap(url)
+    inputs, outputs = _scrape(url)
     file_saver(inputs, outputs)
 
 
-def _scrap(url):
+def _scrape(url):
     logger.info('Scraping ' + url)
     res = req.get(url)
     soup = BeautifulSoup(res.content, 'html.parser')

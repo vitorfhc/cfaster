@@ -21,15 +21,15 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  scrap  Scraps the problem and saves inputs and outputs.
+  scrape  Scrapes the problem and saves inputs and outputs.
 ```
 
 ## Example
 
-This command will scrap the problem from the link and get all the inputs and outputs in `.txt` files.
+This command will scrape the problem from the link and get all the inputs and outputs in `.txt` files.
 
 ```bash
-cfaster scrap https://codeforces.com/contest/1174/problem/A
+cfaster scrape https://codeforces.com/contest/1174/problem/A
 ```
 
 In the future we will have a `cfaster test` command for running your code, testing the inputs, comparing with the outputs and giving you the results.
