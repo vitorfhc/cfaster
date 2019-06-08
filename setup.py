@@ -1,13 +1,11 @@
 import setuptools
+from cfaster import __version__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 with open('requirements.txt', 'r') as r:
     requirements = r.readlines()
-
-with open('VERSION.txt', 'r') as v:
-    version = v.read().strip()
 
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -24,7 +22,7 @@ entry_points = {
 
 setuptools.setup(
     name="cfaster",
-    version=version,
+    version=__version__,
     author="Vitor Falcão Costa",
     author_email="vitorfhcosta@gmail.com",
     description="A package to get all you need to start a\
