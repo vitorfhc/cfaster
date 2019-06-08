@@ -1,3 +1,7 @@
+[![codebeat badge](https://codebeat.co/badges/5f8a6b47-d5e3-42a9-aefc-bfb0d604bbbc)](https://codebeat.co/projects/github-com-vitorfhc-cfaster-master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fa7bac7194b4d0c7e28b/maintainability)](https://codeclimate.com/github/vitorfhc/CFaster/maintainability)
+
+
 # CFaster
 
 CFaster is a tool to easily set all you need to start a contest problem as fast as possible.
