@@ -22,7 +22,7 @@ def set_log_levels(level=logging.WARNING):
 
 @group()
 @option('-v', '--verbose', is_flag=True, help='Output INFO level logs.')
-@version_option(__version__, message='v%(version)s')
+@version_option(__version__, message='%(version)s')
 def main_cmd(verbose):
     if verbose:
         set_log_levels(logging.INFO)
