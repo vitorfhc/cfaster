@@ -1,5 +1,7 @@
 import logging
 from os import mkdir
+from os.path import exists
+from shutil import rmtree
 
 logger = logging.getLogger(__name__)
 
@@ -7,6 +9,20 @@ logger = logging.getLogger(__name__)
 def file_saver(inputs, outputs):
     in_folder = 'inputs/'
     out_folder = 'outputs/'
+
+    in_exists = exists(in_folder)
+    out_exists = exists(out_folder)
+
+    if in_exists or out_exists:
+        logger.warning('Input and/or output directories already exists')
+        choice = input('Overwrite existing input/output folders? [yN] ')
+        if choice.lower() == 'y':
+            rmtree(in_folder)
+            rmtree(out_folder)
+        else:
+            logger.error('Can\'t overwrite inputs/outputs directories')
+            exit(1)
+
     mkdir(in_folder)
     mkdir(out_folder)
 
