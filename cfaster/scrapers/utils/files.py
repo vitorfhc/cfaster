@@ -11,13 +11,13 @@ def file_saver(inputs, outputs):
     mkdir(out_folder)
 
     for ind, inp in enumerate(inputs):
-        filename = f'{in_folder}input_{ind+1}.txt'
+        filename = '{}input_{}.txt'.format(in_folder, ind+1)
         logger.debug('Writing to ' + filename)
         with open(filename, 'w') as f:
             f.write(inp)
 
     for ind, out in enumerate(outputs):
-        filename = f'{out_folder}output_{ind+1}.txt'
+        filename = '{}output_{}.txt'.format(out_folder, ind+1)
         logger.debug('Writing to ' + filename)
         with open(filename, 'w') as f:
             f.write(out)

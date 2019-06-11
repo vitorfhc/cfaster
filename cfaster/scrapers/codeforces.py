@@ -27,6 +27,4 @@ def _scrape(url):
     outputs = tests.find_all('div', {'class': 'output'})
     inputs = [i.pre.text.strip() + '\n' for i in inputs]
     outputs = [o.pre.text.strip() + '\n' for o in outputs]
-    logger.debug(f'Number of inputs: {len(inputs)}')
-    logger.debug(f'Number of outputs: {len(outputs)}')
     return (inputs, outputs)

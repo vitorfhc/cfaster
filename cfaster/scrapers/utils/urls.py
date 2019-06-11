@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 
 def validate_url(url, expected_domain):
-    logger.info(f'Validating url {url} with expected domain {expected_domain}')
+    logger.info('Validating url {} with expected domain {}'.format(url, expected_domain))
     url = url.strip()
     reg = r'^(?:https?://)?(?:www.)?(\w+)(?:.\w+)+(?:/\w*)*$'
     match = re.search(reg, url)
