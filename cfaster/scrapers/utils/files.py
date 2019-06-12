@@ -6,10 +6,7 @@ from shutil import rmtree
 logger = logging.getLogger(__name__)
 
 
-def file_saver(inputs, outputs):
-    in_folder = 'inputs/'
-    out_folder = 'outputs/'
-
+def create_dirs(in_folder, out_folder):
     in_exists = exists(in_folder)
     out_exists = exists(out_folder)
 
@@ -25,6 +22,13 @@ def file_saver(inputs, outputs):
 
     mkdir(in_folder)
     mkdir(out_folder)
+
+
+def file_saver(inputs, outputs):
+    in_folder = 'inputs/'
+    out_folder = 'outputs/'
+
+    create_dirs(in_folder, out_folder)
 
     for ind, inp in enumerate(inputs):
         filename = '{}input_{}.txt'.format(in_folder, ind+1)
