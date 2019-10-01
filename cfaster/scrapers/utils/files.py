@@ -30,14 +30,11 @@ def file_saver(inputs, outputs):
 
     create_dirs(in_folder, out_folder)
 
-    for ind, inp in enumerate(inputs):
-        filename = '{}input_{}.txt'.format(in_folder, ind+1)
-        logger.debug('Writing to ' + filename)
-        with open(filename, 'w') as f:
-            f.write(inp)
+    for filename_base, files in {'input':inputs, 'output':outputs}.items():
+        for ind, dat in enumerate(files, start=1):
+            filename = '{fnb}s/{fnb}_{ind}.txt'.format(fnb=filename_base, ind=ind)
 
-    for ind, out in enumerate(outputs):
-        filename = '{}output_{}.txt'.format(out_folder, ind+1)
-        logger.debug('Writing to ' + filename)
-        with open(filename, 'w') as f:
-            f.write(out)
+            logger.debug('Writing to ' + filename)
+            with open(filename, 'w') as f:
+                f.write(dat)
+
