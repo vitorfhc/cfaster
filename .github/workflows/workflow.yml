@@ -1,14 +1,19 @@
-name: Pull request CI
+name: CI/CD
 
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - develop
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: [3.6, 3.7]
-
-    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -28,3 +33,12 @@ jobs:
 #     run: |
 #       pip install pytest
 #       pytest
+    - name: Check packaging
+      run: |
+        python setup.py sdist
+        python setup.py bdist_wheel
+        twine check dist/*
+    - name: Deploy to production
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: |
+        twine upload -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
