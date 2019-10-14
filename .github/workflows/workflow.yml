@@ -46,4 +46,4 @@ jobs:
     - name: Deploy to production
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: |
-        twine upload -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}
+        twine upload -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }} dist/*
