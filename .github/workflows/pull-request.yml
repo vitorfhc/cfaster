@@ -24,7 +24,7 @@ jobs:
       run: |
         pip install autopep8
         autopep8 --exit-code --diff --recursive .
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest
+#   - name: Test with pytest
+#     run: |
+#       pip install pytest
+#       pytest
